@@ -1,0 +1,130 @@
+{
+    "1": {
+      "id": 1,
+      "Name": "Mika Sanchez",
+      "Role": "Sales Lead",
+      "Department": "Sales",
+      "Salary": 90000,
+      "Manager": null
+    },
+    "6": {
+      "id": 6,
+      "Name": "James Walters",
+      "Role": "Salesperson",
+      "Department": "Sales",
+      "Salary": 34000,
+      "Manager": "Mika Sanchez"
+    },
+    "7": {
+      "id": 7,
+      "Name": "Rori Martin",
+      "Role": "Salesperson",
+      "Department": "Sales",
+      "Salary": 34000,
+      "Manager": "Mika Sanchez"
+    },
+    "8": {
+      "id": 8,
+      "Name": "Jimmy Farmer",
+      "Role": "Salesperson",
+      "Department": "Sales",
+      "Salary": 34000,
+      "Manager": "Mika Sanchez"
+    },
+    "2": {
+      "id": 2,
+      "Name": "Burt Malcolm",
+      "Role": "Senior Software Engineer",
+      "Department": "Engineering",
+      "Salary": 120000,
+      "Manager": null
+    },
+    "9": {
+      "id": 9,
+      "Name": "Lily Smith",
+      "Role": "Software Engineer",
+      "Department": "Engineering",
+      "Salary": 72000,
+      "Manager": "Burt Malcolm"
+    },
+    "10": {
+      "id": 10,
+      "Name": "Samira Mohamed",
+      "Role": "Software Engineer",
+      "Department": "Engineering",
+      "Salary": 72000,
+      "Manager": "Burt Malcolm"
+    },
+    "11": {
+      "id": 11,
+      "Name": "Jacob Daverns",
+      "Role": "Software Engineer",
+      "Department": "Engineering",
+      "Salary": 72000,
+      "Manager": "Burt Malcolm"
+    },
+    "12": {
+      "id": 12,
+      "Name": "Sasha Estavez",
+      "Role": "Engineering Intern",
+      "Department": "Engineering",
+      "Salary": 35000,
+      "Manager": "Burt Malcolm"
+    },
+    "13": {
+      "id": 13,
+      "Name": "Kramer Price",
+      "Role": "Engineering Intern",
+      "Department": "Engineering",
+      "Salary": 35000,
+      "Manager": "Burt Malcolm"
+    },
+    "3": {
+      "id": 3,
+      "Name": "Natasha Kirkov",
+      "Role": "QA Lead",
+      "Department": "Quality Assurance",
+      "Salary": 72000,
+      "Manager": null
+    },
+    "14": {
+      "id": 14,
+      "Name": "Pedro Martinez",
+      "Role": "QA Tester",
+      "Department": "Quality Assurance",
+      "Salary": 55000,
+      "Manager": "Natasha Kirkov"
+    },
+    "15": {
+      "id": 15,
+      "Name": "Val Menchim",
+      "Role": "QA Tester",
+      "Department": "Quality Assurance",
+      "Salary": 55000,
+      "Manager": "Natasha Kirkov"
+    },
+    "4": {
+      "id": 4,
+      "Name": "Jasmine Greene",
+      "Role": "Accountant",
+      "Department": "Finance",
+      "Salary": 50000,
+      "Manager": null
+    },
+    "5": {
+      "id": 5,
+      "Name": "Julian Meyers",
+      "Role": "Lead Team Lead",
+      "Department": "Legal",
+      "Salary": 120000,
+      "Manager": null
+    },
+    "16": {
+      "id": 16,
+      "Name": "Elizabeth Grey",
+      "Role": "Lawyer",
+      "Department": "Legal",
+      "Salary": 100000,
+      "Manager": "Julian Meyers"
+    }
+  }
