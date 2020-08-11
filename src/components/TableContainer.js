@@ -67,8 +67,12 @@ class TableContainer extends Component {
         // Consider splitting "Name" into first and last for easy sorting.
         const employeeArray = (Object.values(dataJSON));
         const employeesFiltered = [];
+        
+        console.log(this.state.filterBy);
         for (const item of employeeArray) {
-            if (Object.values(item).includes(this.state.filterBy) || !this.state.filterBy) employeesFiltered.push(item);
+            if (Object.values(item).toString().toLowerCase().includes((this.state.filterBy).toLowerCase()) || !this.state.filterBy) {
+                employeesFiltered.push(item);
+            }
         }
         //Unnecessary execution ^ 
         //Consider somehow only re-rendering the table if employeesFiltered != "";
@@ -78,8 +82,6 @@ class TableContainer extends Component {
 
     sortButton(thisSortBy) {
         if (thisSortBy === this.state.sortBy) {
-            console.log(`Already sorting by ${thisSortBy}!`);
-            console.log(this.state.sortOrder);
             if (this.state.sortOrder === "asc") {
                 this.setState({sortOrder: "desc"});
             } else {
@@ -95,13 +97,10 @@ class TableContainer extends Component {
 
     iconPicker(thisSortBy) {
         if (this.state.sortBy === thisSortBy && this.state.sortOrder === "asc") {
-            console.log("caretDownFilled");
             return "caretDownFill"
         } else if (thisSortBy === this.state.sortBy) {
-            console.log("caretUpFilled");
             return "caretUpFill"
         } else {
-            console.log("caretDown");
             return "caretDown"
         }
     }
@@ -121,7 +120,7 @@ class TableContainer extends Component {
                         onChange={this.handleInputChange}
                     ></input>
                     <button className="btn btn-primary" type="button" id="searchSubmit" onClick={this.handleFormSubmit}>Search</button>
-                    <button class="btn btn-outline-primary" type="button" id="clearSubmit" onClick={()=> this.setState({ formInput: "", filterBy: "" })}>Reset</button>
+                    <button className="btn btn-outline-primary" type="button" id="clearSubmit" onClick={()=> this.setState({ formInput: "", filterBy: "" })}>Reset</button>
                 </div>
                 <table className="table table-striped">
                     <thead>
