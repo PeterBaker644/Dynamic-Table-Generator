@@ -1,0 +1,16 @@
+.table-header {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.filter-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0rem;
+}
+
+.filter-button:focus {
+    box-shadow: none !important;
+}
