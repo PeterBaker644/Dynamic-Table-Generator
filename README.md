@@ -9,9 +9,9 @@ Test out the project here: [Dynamic Table Generator](https://peterbaker644.githu
 ## User Story
 
 ```
-AS A manager or employee 
-I WANT to be able to view my entire employee directory at once 
-SO THAT I have quick access to their information
+AS A user 
+I WANT to be able to view my json data in a table format 
+SO THAT I can easily sort and view my information
 ```
 
 ## License
