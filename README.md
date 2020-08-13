@@ -4,7 +4,7 @@
 
 An application designed to dynamically generate tables using json data. Allows sorting and filtering a table. Written in React.
 
-Test out the project here: [Employee Directory](https://peterbaker644.github.io/Employee-Directory/)
+Test out the project here: [Dynamic Table Generator](https://peterbaker644.github.io/Dynamic-Table-Generator/)
 
 ## User Story
 
