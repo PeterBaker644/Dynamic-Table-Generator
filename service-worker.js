@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Dynamic-Table-Generator/precache-manifest.4d60d4fd361ad21456f01e7604451d21.js"
+  "/Dynamic-Table-Generator/precache-manifest.6a67bf48600f4997c3ef9a093e493ad4.js"
 );
 
 self.addEventListener('message', (event) => {
