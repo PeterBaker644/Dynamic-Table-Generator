@@ -64,18 +64,13 @@ class TableContainer extends Component {
     }
 
     configureList() {
-        // Consider splitting "Name" into first and last for easy sorting.
         const employeeArray = (Object.values(dataJSON));
         const employeesFiltered = [];
-        
-        console.log(this.state.filterBy);
         for (const item of employeeArray) {
             if (Object.values(item).toString().toLowerCase().includes((this.state.filterBy).toLowerCase()) || !this.state.filterBy) {
                 employeesFiltered.push(item);
             }
         }
-        //Unnecessary execution ^ 
-        //Consider somehow only re-rendering the table if employeesFiltered != "";
         const employeesSorted = employeesFiltered.sort(this.superSorter(this.state.sortBy, this.state.sortOrder));
         return (employeesSorted);
     }
@@ -83,9 +78,9 @@ class TableContainer extends Component {
     sortButton(thisSortBy) {
         if (thisSortBy === this.state.sortBy) {
             if (this.state.sortOrder === "asc") {
-                this.setState({sortOrder: "desc"});
+                this.setState({ sortOrder: "desc" });
             } else {
-                this.setState({sortOrder: "asc"});
+                this.setState({ sortOrder: "asc" });
             }
         } else {
             this.setState({
@@ -108,87 +103,93 @@ class TableContainer extends Component {
     render() {
         return (
             <div className="container">
-                <h1 className="display-1 text-center p-2 m-4">Employee Directory</h1>
-                <div className="input-group mb-3">
-                    <input 
-                        type="text" 
-                        className="form-control" 
-                        placeholder="Search Employees" 
-                        aria-label="Search Employees" 
-                        aria-describedby="searchSubmit"
-                        value={this.state.formInput}
-                        onChange={this.handleInputChange}
-                    ></input>
-                    <button className="btn btn-primary" type="button" id="searchSubmit" onClick={this.handleFormSubmit}>Search</button>
-                    <button className="btn btn-outline-primary" type="button" id="clearSubmit" onClick={()=> this.setState({ formInput: "", filterBy: "" })}>Reset</button>
+                <header>
+                    <h1 className="display-1 text-center p-2 m-4">Employee Directory</h1>
+                    <div className="row">
+                        <div className="input-group mb-3 col">
+                            <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Search Employees"
+                                aria-label="Search Employees"
+                                aria-describedby="searchSubmit"
+                                value={this.state.formInput}
+                                onChange={this.handleInputChange}
+                            ></input>
+                            <button className="btn btn-primary" type="button" id="searchSubmit" onClick={this.handleFormSubmit}>Search</button>
+                        </div>
+                        <button className="btn btn-outline-primary col-3 col-md-1 mb-3" type="button" id="clearSubmit" onClick={() => this.setState({ formInput: "", filterBy: "" })}>Reset</button>
+                    </div>
+                </header>
+                <div className="table-responsive">
+                    <table className="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <button
+                                        type="button"
+                                        className="btn btn-sm filter-button"
+                                        onClick={() => this.sortButton("id")}
+                                    >
+                                        <span className="table-header">#</span>
+                                        <Caret type={this.iconPicker("id")} />
+                                    </button>
+                                </th>
+                                <th scope="col">
+                                    <button
+                                        type="button"
+                                        className="btn btn-sm filter-button"
+                                        onClick={() => this.sortButton("Name")}
+                                    >
+                                        <span className="table-header">Name</span>
+                                        <Caret type={this.iconPicker("Name")} />
+                                    </button>
+                                </th>
+                                <th scope="col">
+                                    <button
+                                        type="button"
+                                        className="btn btn-sm filter-button"
+                                        onClick={() => this.sortButton("Role")}
+                                    >
+                                        <span className="table-header">Role</span>
+                                        <Caret type={this.iconPicker("Role")} />
+                                    </button>
+                                </th>
+                                <th scope="col">
+                                    <button
+                                        type="button"
+                                        className="btn btn-sm filter-button"
+                                        onClick={() => this.sortButton("Department")}
+                                    >
+                                        <span className="table-header">Department</span>
+                                        <Caret type={this.iconPicker("Department")} />
+                                    </button>
+                                </th>
+                                <th scope="col">
+                                    <button
+                                        type="button"
+                                        className="btn btn-sm filter-button"
+                                        onClick={() => this.sortButton("Salary")}
+                                    >
+                                        <span className="table-header">Salary</span>
+                                        <Caret type={this.iconPicker("Salary")} />
+                                    </button>
+                                </th>
+                                <th scope="col">
+                                    <button
+                                        type="button"
+                                        className="btn btn-sm filter-button"
+                                        onClick={() => this.sortButton("Manager")}
+                                    >
+                                        <span className="table-header">Manager</span>
+                                        <Caret type={this.iconPicker("Manager")} />
+                                    </button>
+                                </th>
+                            </tr>
+                        </thead>
+                        <Table employee={this.configureList()} />
+                    </table>
                 </div>
-                <table className="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">
-                                <button 
-                                    type="button" 
-                                    className="btn btn-sm filter-button"
-                                    onClick={() => this.sortButton("id")}
-                                >
-                                    <span className="table-header">#</span>
-                                    <Caret type={this.iconPicker("id")}/>
-                                </button>
-                            </th>
-                            <th scope="col">
-                                <button 
-                                    type="button" 
-                                    className="btn btn-sm filter-button"
-                                    onClick={() => this.sortButton("Name")}
-                                >
-                                    <span className="table-header">Name</span>
-                                    <Caret type={this.iconPicker("Name")}/>
-                                </button>
-                            </th>
-                            <th scope="col">
-                                <button 
-                                    type="button" 
-                                    className="btn btn-sm filter-button"
-                                    onClick={() => this.sortButton("Role")}
-                                >
-                                    <span className="table-header">Role</span>
-                                    <Caret type={this.iconPicker("Role")}/>
-                                </button>
-                            </th>
-                            <th scope="col">
-                                <button 
-                                    type="button" 
-                                    className="btn btn-sm filter-button"
-                                    onClick={() => this.sortButton("Department")}
-                                >
-                                    <span className="table-header">Department</span>
-                                    <Caret type={this.iconPicker("Department")}/>
-                                </button>
-                            </th>
-                            <th scope="col">
-                                <button 
-                                    type="button" 
-                                    className="btn btn-sm filter-button"
-                                    onClick={() => this.sortButton("Salary")}
-                                >
-                                    <span className="table-header">Salary</span>
-                                    <Caret type={this.iconPicker("Salary")}/>
-                                </button>
-                            </th>
-                            <th scope="col">
-                                <button 
-                                    type="button" 
-                                    className="btn btn-sm filter-button"
-                                    onClick={() => this.sortButton("Manager")}
-                                >
-                                    <span className="table-header">Manager</span>
-                                    <Caret type={this.iconPicker("Manager")}/>
-                                </button>
-                            </th>
-                        </tr>
-                    </thead>
-                    <Table employee={this.configureList()} />
-                </table>
             </div>
         )
     }
