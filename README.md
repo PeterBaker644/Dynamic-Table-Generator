@@ -2,7 +2,7 @@
 
 [![GitHub license](https://img.shields.io/github/license/PeterBaker644/Employee-Directory)](https://github.com/PeterBaker644/Employee-Directory/blob/master/LICENSE) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.md)
 
-A application for dynamically generating tables with json data. Allows sorting and filtering a table. Written in React.
+An application designed to dynamically generate tables using json data. Allows sorting and filtering a table. Written in React.
 
 Test out the project here: [Employee Directory](https://peterbaker644.github.io/Employee-Directory/)
 
