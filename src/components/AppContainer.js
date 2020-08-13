@@ -15,7 +15,7 @@ class AppContainer extends Component {
         sortOrder: "asc",
         filterBy: "",
         formInput: "",
-        seed: students
+        seed: employees
     };
 
     selectSeed = event => {
